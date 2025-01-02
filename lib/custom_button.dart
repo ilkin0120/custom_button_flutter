@@ -93,10 +93,15 @@ class CustomButton extends StatelessWidget {
       mainAxisSize: sizeBehavior,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        if (!isIconReversed) _getIcon(),
-        if (spacing != null) SizedBox(width: spacing),
+        if (!isIconReversed) ...[
+          _getIcon(),
+          if (spacing != null) SizedBox(width: spacing),
+        ],
         label ?? const SizedBox.shrink(),
-        if (isIconReversed) _getIcon(),
+        if (isIconReversed) ...[
+          if (spacing != null) SizedBox(width: spacing),
+          _getIcon(),
+        ],
       ],
     );
   }
