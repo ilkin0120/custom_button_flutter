@@ -71,7 +71,6 @@ class CustomButton extends StatelessWidget {
       highlightColor: Colors.transparent,
       onTap: isEnabled && !isLoading ? onPressed : null,
       child: Container(
-        constraints: BoxConstraints(maxHeight: height ?? 40),
         width: width,
         height: height,
         padding: padding,
